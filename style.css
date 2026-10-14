@@ -3086,3 +3086,38 @@ p {
     align-items: flex-start;
   }
 }
+/* =========================================
+   INTRODUCTION - MOBILE GAP FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .intro-section {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .intro-section .footer-meta {
+    margin-top: 4rem;
+    padding-top: 0;
+  }
+}
+/* =========================================
+   COVER - MOBILE SPACE BALANCE
+========================================= */
+
+@media (max-width: 768px) {
+  .cover-section {
+    min-height: 92svh;
+  }
+
+  .cover-visual {
+    transform: translateY(-5rem);
+  }
+}
+/* 공모전 첫 번째 카드 - 모바일 제목 한 글자 줄바꿈 방지 */
+@media (max-width: 768px) {
+  #contests .contest-item:first-child .contest-detail h3 {
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+}
