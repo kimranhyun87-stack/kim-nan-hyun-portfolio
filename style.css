@@ -1,0 +1,2478 @@
+:root {
+  --background: #171717;
+  --foreground: #f2e5ce;
+  --cream: #f2e5ce;
+  --ink: #171717;
+  --muted-cream: #d9ccb8;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  /* 추가 */
+  --content-max-width: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.portfolio-shell {
+  width: 100%;
+  overflow: hidden;
+}
+.portfolio-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 5.2vw 5.1vw 4.8vw;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+.meta-bar,
+.footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 3;
+  font-size: clamp(0.65rem, 0.78vw, 0.9rem);
+  letter-spacing: -0.02em;
+}
+.contests-section .meta-bar {
+  margin-top: -3rem;
+}
+.arrow {
+  font-size: 2.1rem;
+  line-height: 0.5;
+  font-weight: 200;
+}
+.footer-meta {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+.display-title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-display);
+  font-stretch: condensed;
+  font-weight: 400;
+  letter-spacing: -0.095em;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+.body-copy {
+  color: var(--muted-cream);
+  font-size: clamp(0.62rem, 0.72vw, 0.78rem);
+  line-height: 1.5;
+}
+
+/* Cover Section */
+.cover-section {
+  min-height: min(100vh, 60vw);
+  padding: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.cover-reference {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.8;
+}
+.cover-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 17vw, 18rem);
+  position: relative;
+  z-index: 2;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+/* Table of Contents */
+.contents-section-revised {
+  min-height: 100vh;
+}
+.contents-layout-revised {
+  width: 100%;
+  max-width: 100%;
+  margin: 3rem 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8vw;
+}
+.contents-lead-revised {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contents-title {
+  font-size: clamp(6rem, 13vw, 15rem);
+  letter-spacing: -0.025em;
+  line-height: 0.88;
+}
+.contents-lead-revised .body-copy {
+  max-width: 31rem;
+  margin-top: 1.5rem;
+}
+.contents-nav-revised {
+  flex: none;
+  width: 650px;
+  max-width: 100%;
+}
+.contents-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+.contents-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.contents-row a {
+  border: 1px solid var(--cream);
+  border-radius: 999px;
+  min-height: 4rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem 1.5rem;
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.contents-row a:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+.contents-row .filled-pill {
+  background: var(--cream);
+  color: var(--ink);
+}
+.contents-row .filled-pill:hover {
+  background: #d6c8a7;
+  border-color: #d6c8a7;
+}
+
+/* Intro Section */
+.intro-section {
+  align-items: center;
+  text-align: center;
+}
+.intro-art {
+  width: 62%;
+  max-width: 1050px;
+  height: 28vh;
+  min-height: 13rem;
+  margin-top: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.intro-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: saturate(0.78) contrast(0.92);
+  opacity: 0.8;
+}
+.intro-title {
+  margin-top: -2.5rem;
+  font-size: clamp(4rem, 10.3vw, 11rem);
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+.intro-copy {
+  max-width: 34rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+  line-height: 1.6;
+}
+.intro-section .footer-meta {
+  width: 100%;
+  text-align: left;
+}
+
+/* About Section 기존꺼 삭제 */
+
+/* Projects Section */
+.projects-section {
+  min-height: 100vh;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 8vw;
+  align-items: center;
+  flex: 1;
+}
+.projects-title {
+  font-size: clamp(4.8rem, 11.5vw, 14rem);
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+}
+.projects-description {
+  max-width: 30rem;
+  margin: 2.2rem 0 0;
+  font-size: clamp(0.85rem, 1.05vw, 1.15rem);
+  line-height: 1.45;
+  color: var(--muted-cream);
+}
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.project-card {
+  min-height: 8rem;
+  padding: 1.25rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  background: var(--cream);
+  color: var(--ink);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  background: #ead9bd;
+}
+.project-copy {
+  min-width: 0;
+}
+.project-copy h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.15vw, 2.45rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+.project-copy p {
+  margin: 0.75rem 0 0;
+  font-size: clamp(0.9rem, 1.15vw, 1.25rem);
+  letter-spacing: -0.045em;
+  color: #555;
+}
+.project-thumb {
+  flex: 0 0 6rem;
+  width: 6rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  background: #d4d0cc;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+/* Contests Section */
+.contests-specific-title {
+  font-size: clamp(5.5rem, 10.8vw, 13rem);
+  letter-spacing: -0.03em;
+  line-height: 0.82;
+  white-space: nowrap;
+}
+.contests-section {
+  min-height: 100vh;
+  justify-content: center;
+}
+.contests-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5vw;
+  align-items: center;
+  flex: 1;
+}
+.contests-text-area .body-copy {
+  max-width: 28rem;
+  margin-top: 1.5rem;
+}
+.contests-list-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 35rem;
+  justify-self: end;
+}
+
+/* Contact Section */
+.contact-section {
+  min-height: 100vh;
+}
+.contact-compact-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8vw;
+  flex: 1;
+  padding: 0;
+}
+.contact-code-lead {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-code-lead .body-copy {
+  max-width: 22rem;
+  margin-top: 1.5rem;
+  color: var(--muted-cream);
+}
+.contact-code-cards {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--cream);
+  border-radius: 1.25rem;
+  color: var(--cream);
+  transition:
+    background 0.4s,
+    color 0.4s;
+}
+.contact-code-card:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+.contact-code-card span {
+  margin-bottom: 0.375rem;
+  color: var(--muted-cream);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+.contact-code-card:hover span {
+  color: var(--ink);
+}
+.contact-code-card strong {
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: color 0.4s;
+}
+.contact-code-card:hover strong {
+  color: var(--ink);
+}
+
+/* Thank You Section */
+.thankyou-section {
+  min-height: 100vh;
+}
+.thankyou-content {
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+.thankyou-title {
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--font-display);
+
+  /* 지금보다 아주 조금 크게 */
+  font-size: clamp(5.4rem, 12vw, 14.5rem);
+
+  /* THANK / YOU 줄 간격 */
+  line-height: 0.88;
+
+  /* 글자 사이를 살짝 넓힘 */
+  letter-spacing: 0.01em;
+
+  text-transform: uppercase;
+}
+.thankyou-copy {
+  margin: 2rem 0 0;
+  max-width: 32rem;
+  color: var(--muted-cream);
+  font-size: clamp(0.9rem, 1.25vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.back-to-top {
+  margin-top: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--cream);
+  border-radius: 999px;
+  color: var(--cream);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.back-to-top:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+.back-to-top-arrow {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+.back-to-top:hover .back-to-top-arrow {
+  transform: translateY(-0.4rem);
+}
+
+/* Contests list area custom style */
+.contests-list-area .contest-item {
+  min-height: 8.5rem;
+  padding: 1.65rem 1.8rem;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 1.5rem;
+  border: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contests-list-area .contest-item:hover {
+  transform: translateX(-0.4rem);
+  background: #ead9bd;
+}
+.contests-list-area .contest-item .contest-year {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  width: 3.5rem;
+}
+.contests-list-area .contest-item .contest-detail h3 {
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.contests-list-area .contest-item .contest-detail p {
+  color: #555;
+  font-size: 0.8rem;
+}
+.contests-list-area .contest-item .contest-arrow {
+  color: var(--ink);
+  opacity: 1;
+  font-size: 1.5rem;
+}
+.contests-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ========================================= */
+/* Project Detail Modal (모달창 스타일) */
+/* ========================================= */
+.project-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 4rem);
+  background: rgba(23, 23, 23, 0.84);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.project-detail:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-modal {
+  width: min(100%, 72rem);
+  max-height: 90svh;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 4vw;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  border-radius: 2rem;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(23, 23, 23, 0.35);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.modal-heading {
+  padding-top: 1.5rem;
+}
+
+.modal-heading h2 {
+  margin: 0.75rem 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  letter-spacing: -0.08em;
+  line-height: 0.76;
+  text-transform: uppercase;
+}
+
+.modal-heading .body-copy {
+  color: #555;
+}
+
+.nova-preview {
+  min-height: 21rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: var(--ink);
+  color: var(--cream);
+  transform: rotate(2deg);
+}
+
+.hackathon-preview {
+  transform: rotate(-2deg);
+}
+
+.nova-preview span {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 14vw, 12rem);
+  font-weight: 900;
+  line-height: 0.7;
+  letter-spacing: -0.1em;
+}
+
+.hackathon-preview span {
+  font-size: clamp(8rem, 16vw, 13rem);
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.7;
+  letter-spacing: -0.1em;
+}
+
+.nova-preview small,
+.hackathon-preview small {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  color: var(--cream);
+}
+
+.project-facts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(23, 23, 23, 0.25);
+}
+
+.project-facts div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-facts .kicker {
+  margin: 0;
+  color: #666;
+}
+
+.project-facts strong {
+  font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+  font-weight: 500;
+}
+
+.modal-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.modal-footer a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.2rem;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .portfolio-section {
+    min-height: 100svh;
+    padding: 1.5rem 1.25rem;
+  }
+  .contents-layout-revised {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+  .contents-nav-revised {
+    width: 100%;
+  }
+  .contents-row {
+    gap: 0.75rem;
+  }
+  .about-code-layout {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0;
+  }
+  .about-code-lead,
+  .about-code-details,
+  .about-code-visual {
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-1rem);
+  }
+  .about-code-details {
+    gap: 1.75rem;
+    padding: 1.5rem 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(242, 229, 206, 0.2);
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contests-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contests-list-area {
+    max-width: 100%;
+  }
+  .contact-compact-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
+    padding: 0;
+  }
+  .contact-code-cards {
+    max-width: 100%;
+  }
+  .project-modal {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+  .modal-heading {
+    padding-top: 1.5rem;
+  }
+  .modal-heading h2 {
+    font-size: clamp(4.5rem, 22vw, 7rem);
+  }
+  .nova-preview,
+  .hackathon-preview {
+    min-height: 15rem;
+  }
+  .project-facts {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .modal-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ========================================= */
+/* 링크형 프리뷰 박스 (화살표 버튼 포함) 스타일 */
+/* ========================================= */
+.nova-preview-link {
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nova-preview-link:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.preview-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.preview-action-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cream);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: var(--cream);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nova-preview-link:hover .preview-action-btn {
+  background: var(--cream);
+  color: var(--ink);
+  transform: translate(2px, -2px);
+}
+/* ========================================= */
+/* 새로운 About Me 섹션 스타일 (3단 레이아웃) */
+/* ========================================= */
+/* ========================================= */
+/* 꽉 찬 3단 레이아웃 어바웃 미 섹션 스타일 */
+/* ========================================= */
+/* ========================================= */
+/* 화면에 꽉 차는 압도적인 3단 레이아웃 어바웃 미 */
+/* ========================================= */
+/* ========================================= */
+/* 바깥 여백은 고정하고 내부 요소만 큼직하게 꽉 채우는 어바웃 미 섹션 */
+/* ========================================= */
+.about-section {
+  min-height: 100vh;
+  justify-content: center;
+  /* 양 끝 바깥쪽 여백(X 부분)은 기존 섹션 패딩 그대로 완벽하게 고정합니다 */
+  padding: 5.2vw 5.1vw 4.8vw;
+}
+
+.about-new-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: auto 0;
+  display: grid;
+  /* 1번 텍스트, 2번 사진, 3번 버튼이 차지하는 가로 폭 비율을 조정하여 내부 틈새를 좁힘 */
+  grid-template-columns: 1.1fr 1.35fr 0.85fr;
+  gap: 1.5rem; /* 👈 사진과 글씨 사이, 사진과 버튼 사이의 내부 간격을 바짝 좁힘 */
+  align-items: center;
+  flex: 1;
+}
+
+/* 1번 영역: 왼쪽 텍스트 그룹 (크기를 키움) */
+.about-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-index {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  color: var(--muted-cream);
+  margin-bottom: 0.3rem;
+}
+
+.about-main-title {
+  /* 1번 ABOUT ME 글씨 크기를 훨씬 큼직하고 압도적으로 키움 */
+  font-size: clamp(5.5rem, 12vw, 14rem);
+  letter-spacing: -0.04em;
+  line-height: 0.75;
+  margin-bottom: 0.85rem;
+}
+
+.about-profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+.about-role {
+  font-size: 0.85rem;
+  color: var(--muted-cream);
+}
+
+.about-desc {
+  max-width: 30rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--muted-cream);
+}
+/* 2번 영역: 가운데 프로필 사진 (크기를 훨씬 크게 키움) */
+.about-center-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-rect-portrait {
+  width: 100%;
+  max-width: 390px;
+  height: 58vh;
+  min-height: 420px;
+
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+}
+
+.about-rect-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*filter: grayscale(1);*/
+  transition: filter 0.5s ease;
+}
+
+/*.about-rect-portrait:hover img {
+  filter: grayscale(0);
+}*/
+
+/* 3번 영역: 오른쪽 알약 버튼 리스트 */
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 260px;
+}
+
+.about-pill-item {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(242, 229, 206, 0.35);
+  border-radius: 999px;
+  text-align: center;
+  color: var(--cream);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  cursor: default;
+}
+
+.about-pill-item:hover {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+}
+
+.about-tagline {
+  font-family: cursive, sans-serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--cream);
+  opacity: 0.85;
+  margin-right: 0.5rem;
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 900px) {
+  .about-new-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-rect-portrait {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-width: 320px;
+  }
+  .about-right-col {
+    align-items: stretch;
+  }
+  .about-pill-list {
+    max-width: 100%;
+  }
+  .about-tagline {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+/* ========================================= */
+/* 전체 포트폴리오 콘텐츠 최대 가로폭 */
+/* ========================================= */
+
+.meta-bar,
+.footer-meta,
+.contents-layout-revised,
+.about-new-layout,
+.projects-grid,
+.contests-grid,
+.contact-compact-layout {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ========================================= */
+/* 메인 커버 이미지 가로폭 제한 */
+/* ========================================= */
+
+.cover-section {
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.cover-reference {
+  position: static;
+  width: 112%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+.about-quote {
+  margin: 0.7rem 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+.about-desc {
+  max-width: 30rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--muted-cream);
+}
+.contests-text-area .body-copy {
+  max-width: 32rem;
+  margin-top: 1.4rem;
+  font-size: clamp(0.85rem, 1.05vw, 1.15rem);
+  line-height: 1.45;
+}
+/* ========================================= */
+/* COVER - 새 HTML 구조 기본 레이아웃 */
+/* ========================================= */
+
+.cover-section {
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-height: min(100vh, 850px);
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* 상단 Creative Presentation + 화살표 */
+.cover-meta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 10;
+
+  font-size: clamp(0.75rem, 0.85vw, 0.95rem);
+  color: var(--cream);
+}
+
+.cover-arrow {
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: 1;
+}
+
+/* PORTFOLIO + 사진이 들어가는 중앙 영역 */
+.cover-visual {
+  flex: 1;
+  width: 100%;
+  min-height: 680px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PORTFOLIO 큰 글자 */
+.cover-main-title {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 19vw, 18rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+
+  color: var(--cream);
+  white-space: nowrap;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* 인물 사진 */
+.cover-person {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  width: clamp(300px, 26vw, 430px);
+  height: auto;
+
+  z-index: 2;
+}
+
+.cover-person img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+/* ========================================= */
+/* COVER - 타이포 + 오른쪽 인물 최종 배치 */
+/* ========================================= */
+
+.cover-visual {
+  flex: 1;
+  width: 100%;
+  min-height: 680px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* PORTFOLIO : 더 크고 왼쪽 중심 */
+.cover-main-title {
+  margin: 0;
+
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 20vw, 22rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+
+  color: var(--cream);
+  white-space: nowrap;
+
+  text-align: left;
+
+  position: relative;
+  z-index: 1;
+
+  transform: translateX(-1%);
+}
+
+/* 인물 : 오른쪽으로 이동 */
+.cover-person {
+  position: absolute;
+
+  left: 72%;
+  bottom: 3%;
+  transform: translateX(-50%);
+
+  width: clamp(280px, 24vw, 390px);
+  height: auto;
+
+  z-index: 2;
+}
+
+.cover-person img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+/* PORTFOLIO 글자 - 조금 더 크게 + 글자 사이 여유 */
+.cover-main-title {
+  font-size: clamp(12.5rem, 21.5vw, 23rem);
+  letter-spacing: -0.015em;
+  line-height: 0.8;
+}
+
+/* 인물 - 오른쪽 빈 공간 쪽으로 이동 */
+.cover-person {
+  left: 79%;
+  bottom: 3%;
+  width: clamp(280px, 23vw, 380px);
+}
+/* ========================================= */
+/* CONTACT 타이포 밸런스 조정 */
+/* ========================================= */
+
+.contact-code-lead .contents-title {
+  font-size: clamp(4.8rem, 11.5vw, 14rem);
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+}
+
+.contact-code-lead .body-copy {
+  max-width: 36rem;
+  margin-top: 2.2rem;
+
+  font-size: clamp(0.85rem, 1.05vw, 1.15rem);
+  line-height: 1.45;
+
+  color: var(--muted-cream);
+}
+.cover-footer {
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+/* ABOUT ME 타이포 밸런스 조정 */
+
+.about-main-title {
+  font-size: clamp(5rem, 10.5vw, 12rem);
+  line-height: 0.78;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.2rem;
+}
+
+.about-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.about-role {
+  font-size: 0.95rem;
+}
+
+.about-quote {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.about-desc {
+  max-width: 30rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+/* ========================================= */
+/* ABOUT ME - 소개 중심 타이포 밸런스 */
+/* ========================================= */
+
+.about-main-title {
+  font-size: clamp(4.8rem, 8vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  margin-bottom: 2rem;
+}
+
+/* 이름 */
+.about-name {
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* 직무 */
+.about-role {
+  margin-top: 0.3rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* 핵심 문장 */
+.about-quote {
+  margin: 1.5rem 0 1.25rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+/* 자기소개 본문 */
+.about-desc {
+  max-width: 32rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted-cream);
+}
+/* PROJECT 카드 제목 최종 정리 */
+.project-copy h3 {
+  font-size: clamp(1.35rem, 1.55vw, 1.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.project-copy p {
+  margin-top: 0.65rem;
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+}
+/* =========================================
+   DIPPINGBOOK PROJECT MODAL
+========================================= */
+
+.dippingbook-modal {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem 3.5rem;
+}
+
+/* 왼쪽 제목 */
+.dippingbook-heading h2 {
+  margin: 0.8rem 0 1rem;
+
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+}
+
+/* 프로젝트 한 줄 소개 */
+.dippingbook-subtitle {
+  margin: 0 0 1rem;
+
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.4;
+  font-weight: 600;
+
+  color: var(--ink);
+}
+
+/* 상세 설명 */
+.dippingbook-heading .body-copy {
+  max-width: 30rem;
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+
+  color: #555;
+}
+
+/* 특징 태그 */
+.dippingbook-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-top: 1.5rem;
+}
+
+.dippingbook-tags span {
+  padding: 0.55rem 0.85rem;
+
+  border: 1px solid rgba(23, 23, 23, 0.3);
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* 오른쪽 프로젝트 이미지 */
+.dippingbook-preview {
+  position: relative;
+
+  min-height: 22rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 1.25rem;
+  background: #eef0f3;
+
+  text-decoration: none;
+}
+
+.dippingbook-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  display: block;
+}
+
+/* 사이트 방문 버튼 */
+.dippingbook-link {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 999px;
+
+  background: var(--ink);
+  color: var(--cream);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* 아래 정보 4칸 */
+.dippingbook-facts {
+  grid-template-columns: 1fr 0.8fr 1.5fr 0.8fr;
+}
+
+.dippingbook-facts strong {
+  line-height: 1.5;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .dippingbook-modal {
+    grid-template-columns: 1fr;
+  }
+
+  .dippingbook-heading h2 {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .dippingbook-preview {
+    min-height: 15rem;
+  }
+
+  .dippingbook-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* DIPPING BOOK 제목 간격 수정 */
+.dippingbook-heading h2 {
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+
+  /* 글자 사이 조금 넓게 */
+  letter-spacing: -0.01em;
+
+  /* DIPPING / BOOK 사이 간격 */
+  line-height: 0.9;
+
+  margin: 0.8rem 0 1.3rem;
+}
+/* DippingBook 프리뷰 이미지 여백 제거 */
+
+.dippingbook-preview {
+  min-height: 0;
+  background: transparent;
+}
+
+.dippingbook-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: initial;
+}
+.lego-heading h2 {
+  margin: 0.8rem 0 1.3rem;
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  letter-spacing: 0.015em;
+  line-height: 0.95;
+}
+/* =========================================
+   LEGO 모달 이미지 크기 최종 조정
+========================================= */
+
+.lego-modal {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+}
+
+.lego-preview {
+  width: 100%;
+  height: 430px;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #f4efe5;
+}
+
+.lego-preview img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  display: block;
+}
+/* LEGO 프리뷰 위아래 빈 여백 제거 */
+.lego-preview {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  background: transparent;
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.lego-preview img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+  object-fit: initial;
+}
+/* LEGO 사이트 방문 버튼 */
+
+.lego-preview {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.lego-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lego-link {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  min-width: max-content;
+
+  padding: 0.75rem 1rem;
+
+  background: var(--ink);
+  color: var(--cream);
+
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* NIGHT RUNNER 제목 최종 조정 */
+.night-heading h2 {
+  letter-spacing: 0.015em;
+  line-height: 0.92;
+}
+/* =========================================
+   NIGHT RUNNER MODAL FINAL
+========================================= */
+
+.night-modal {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 3rem;
+  align-items: start;
+  overflow: hidden;
+}
+
+/* 왼쪽 제목 */
+.night-heading h2 {
+  margin: 0.8rem 0 1.5rem;
+  font-size: clamp(4.5rem, 6.5vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: 0.015em;
+}
+
+/* 설명 */
+.night-heading .body-copy {
+  max-width: 34rem;
+  line-height: 1.7;
+}
+
+/* 태그 */
+.night-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.night-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(20, 20, 20, 0.25);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* 오른쪽 이미지 */
+.night-preview {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+
+  aspect-ratio: 3 / 2;
+
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: transparent;
+}
+
+.night-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* 사이트 방문 버튼 */
+.night-link {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+
+  background: #151515;
+  color: #f4e7cb;
+
+  font-size: 0.78rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* 아래 정보 전체 폭 사용 */
+.night-facts {
+  grid-column: 1 / -1;
+}
+
+.night-modal .modal-footer {
+  grid-column: 1 / -1;
+}
+/* 프로젝트 모달 중간 서브타이틀 통일 */
+.lego-subtitle,
+.night-subtitle {
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin-bottom: 0.55rem;
+}
+/* 공모전 카드 타이포 최종 조정 */
+
+.contest-item .contest-year {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contest-item .contest-detail h3 {
+  margin: 0.55rem 0 0.32rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.contest-item .contest-detail p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.82;
+}
+/* =========================================
+   CONTEST 01 - MY FREQUENCY
+========================================= */
+
+/* 큰 제목 */
+.contest-heading h2 {
+  margin: 0.7rem 0 1.4rem;
+  font-size: clamp(4.3rem, 6vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+/* 작품 제목 */
+.contest-subtitle {
+  margin: 0 0 0.65rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 설명 */
+.contest-heading .body-copy {
+  max-width: 34rem;
+  line-height: 1.65;
+}
+
+/* 태그 */
+.contest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.contest-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(20, 20, 20, 0.25);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* 아래 정보 4열 */
+.contest-facts {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* 하단도 전체 폭 */
+.contest-modal .modal-footer {
+  grid-column: 1 / -1;
+}
+/* =========================================
+   CONTEST 01 - MY FREQUENCY PREVIEW FIX
+========================================= */
+
+.contest-modal {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 3rem;
+  align-items: start;
+  overflow: hidden;
+}
+
+/* 오른쪽 이미지 영역 */
+.contest-preview.frequency-preview {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+  overflow: hidden;
+
+  background: transparent;
+}
+
+/* 실제 이미지 */
+.frequency-preview img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  max-height: 400px;
+
+  display: block;
+  object-fit: contain;
+
+  margin: 0 auto;
+  border-radius: 0;
+}
+
+/* 하단 정보는 전체 폭 */
+.contest-facts {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* 푸터도 전체 폭 */
+.contest-modal .modal-footer {
+  grid-column: 1 / -1;
+}
+/* =========================================
+   MY FREQUENCY - VIDEO PLAY BUTTON
+========================================= */
+
+.frequency-preview {
+  position: relative;
+}
+
+.frequency-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  padding: 0.75rem 1.15rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: rgba(15, 15, 15, 0.9);
+  color: #fff;
+
+  font: inherit;
+  cursor: pointer;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.frequency-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: #111;
+}
+
+.play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+
+  font-size: 0.75rem;
+  padding-left: 0.1rem;
+}
+
+.play-text {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   MY FREQUENCY - YOUTUBE POPUP
+========================================= */
+
+.frequency-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+.frequency-video-modal.is-open {
+  display: flex;
+}
+
+.frequency-video-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(7px);
+}
+
+.frequency-video-panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(390px, 88vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1.2rem;
+
+  border-radius: 1.5rem;
+
+  background: #f3e7cd;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.frequency-video-frame {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+  border-radius: 1.1rem;
+
+  background: #000;
+}
+
+.frequency-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.frequency-video-close {
+  position: absolute;
+  top: -0.9rem;
+  right: -0.9rem;
+
+  width: 2.7rem;
+  height: 2.7rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.frequency-youtube-link {
+  margin-top: 0.9rem;
+
+  color: #111;
+  font-size: 0.8rem;
+  text-decoration: none;
+
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.15rem;
+}
+.digital-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  background: transparent;
+}
+
+.digital-preview .contest-preview-image {
+  max-width: 100%;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+/* =========================================
+   DIGITAL CANVAS - PLAY BUTTON
+========================================= */
+
+.digital-preview {
+  position: relative;
+}
+
+.digital-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  padding: 0.75rem 1.15rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: rgba(10, 15, 20, 0.9);
+  color: #fff;
+
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.digital-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: #111;
+}
+
+.digital-play-icon {
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff;
+  color: #111;
+
+  font-size: 0.7rem;
+  padding-left: 0.1rem;
+}
+
+/* =========================================
+   DIGITAL CANVAS - VIDEO POPUP
+========================================= */
+
+.digital-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+.digital-video-modal.is-open {
+  display: flex;
+}
+
+.digital-video-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.digital-video-panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(900px, 92vw);
+
+  padding: 1.35rem;
+
+  border-radius: 1.8rem;
+
+  background: #f3e7cd;
+
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5);
+}
+
+/* 태블릿 외곽 */
+.digital-video-device {
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 1.7rem;
+
+  background: #111;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.32),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* 실제 16:9 영상 */
+.digital-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+  border-radius: 1.05rem;
+
+  background: #000;
+}
+
+.digital-video-frame iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  border: 0;
+}
+
+/* 닫기 버튼 */
+.digital-video-close {
+  position: absolute;
+  top: -0.8rem;
+  right: -0.8rem;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  z-index: 2;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 영상 아래 */
+.digital-video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 0.9rem;
+
+  font-size: 0.78rem;
+}
+
+.digital-video-info span {
+  opacity: 0.65;
+}
+
+.digital-video-info a {
+  color: #111;
+  text-decoration: none;
+
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.15rem;
+}
+/* =========================================
+   VIDEO EDITING MODAL - TYPOGRAPHY FIX
+========================================= */
+
+/* 1. BOXING CONTENT 큰 제목 */
+.video-editing-heading h2 {
+  margin: 0.65rem 0 1.5rem;
+
+  font-size: clamp(4rem, 6vw, 6.4rem);
+
+  /* 글자 겹침 방지 */
+  letter-spacing: 0.01em;
+
+  /* BOXING / CONTENT 줄 간격 */
+  line-height: 0.9;
+}
+
+/* 체크한 소제목 */
+.video-editing-subtitle {
+  margin: 0 0 0.75rem;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  color: #171717;
+}
+
+/* 2. 설명 본문 */
+.video-editing-heading .body-copy {
+  max-width: 35rem;
+
+  margin: 0;
+
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  color: rgba(20, 20, 20, 0.78);
+}
+.video-editing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+
+  margin-top: 1rem;
+}
+
+.video-editing-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.55rem 0.9rem;
+
+  border: 1px solid rgba(20, 20, 20, 0.25);
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+.video-editing-heading .body-copy {
+  max-width: 38rem;
+  margin: 0;
+
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: rgba(20, 20, 20, 0.8);
+}
+/* =========================================
+   BOXING CONTENT - FINAL PREVIEW
+========================================= */
+
+.video-editing-preview {
+  width: 100%;
+  max-width: 620px;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  align-self: center;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+/* 태블릿 + 스마트폰 대표 이미지 */
+.boxing-preview-image {
+  display: block;
+
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* 이미지 아래 버튼 2개 */
+.boxing-preview-links {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+
+  margin-top: 0.55rem;
+}
+
+/* 버튼 공통 */
+.boxing-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 0.65rem 1.05rem;
+
+  border: 1px solid rgba(20, 20, 20, 0.28);
+  border-radius: 999px;
+
+  background: transparent;
+  color: #171717;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* 일반 영상 버튼 */
+.longform-link {
+  justify-self: center;
+}
+
+/* Shorts 버튼 */
+.shorts-link {
+  justify-self: center;
+}
+
+/* 마우스 올렸을 때 */
+.boxing-link:hover {
+  background: #171717;
+  color: #f3e7cd;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   VIDEO EDITING - RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .video-editing-preview {
+    max-width: 100%;
+  }
+
+  .boxing-preview-image {
+    max-width: 100%;
+  }
+
+  .boxing-preview-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .boxing-link {
+    font-size: 0.72rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+/* =========================================
+   VIDEO EDITING - FACTS / FOOTER FIX
+========================================= */
+
+.video-editing-facts {
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 2rem;
+
+  width: 100%;
+
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid rgba(20, 20, 20, 0.18);
+}
+
+/* 하단 footer 전체폭 */
+.video-editing-modal .modal-footer {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  margin-top: 1.5rem;
+}
+/* VIDEO EDITING - INTRO LEAD */
+
+.video-editing-lead {
+  max-width: none;
+  width: max-content;
+
+  margin: 0 0 0.55rem;
+
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  color: #171717;
+  white-space: nowrap;
+}
+
+.video-editing-heading .body-copy {
+  max-width: 35rem;
+
+  margin: 0;
+
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  color: rgba(20, 20, 20, 0.75);
+}
+/* PROJECT PORTFOLIO - footer meta 정렬 */
+#project-portfolio .footer-meta {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+
+  width: 100%;
+  max-width: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#project-portfolio .footer-meta span:first-child {
+  margin-right: auto;
+}
+
+#project-portfolio .footer-meta span:last-child {
+  margin-left: auto;
+  text-align: right;
+}
+/* =========================================
+   TABLE OF CONTENTS - SIZE BALANCE
+========================================= */
+
+/* 1. TABLE OF CONTENTS 제목 살짝 축소 */
+#table-of-contents .contents-title {
+  font-size: clamp(7.8rem, 10.5vw, 11.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+/* 2. 아래 설명 문구 조금 확대 */
+#table-of-contents .contents-lead-revised .body-copy {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  max-width: 30rem;
+}
+/* PROJECTS & CONTESTS - 제목 아주 살짝 축소 */
+#contests .display-title {
+  transform: scale(0.97);
+  transform-origin: left center;
+}
+/* CONTACT - 제목 살짝 축소 */
+#contact .display-title {
+  transform: scale(0.94);
+  transform-origin: left center;
+}
+/* =========================================
+   THANK YOU - FINAL BALANCE
+========================================= */
+
+/* 1. THANK YOU 제목 살짝 축소 */
+#thank-you .display-title {
+  transform: scale(0.94);
+  transform-origin: center center;
+}
+
+/* 2. 아래 문구 조금 더 크고 굵게 */
+#thank-you .body-copy {
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+/* PROJECT PORTFOLIO - 본문 위치만 아래로 */
+#project-portfolio .projects-grid {
+  transform: translateY(5rem);
+}
+/* =========================================
+   COVER - MOBILE TITLE FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .cover-main-title {
+    font-size: 17vw;
+    letter-spacing: -0.02em;
+    line-height: 0.82;
+    white-space: nowrap;
+    transform: none;
+  }
+}
